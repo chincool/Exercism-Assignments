@@ -1,9 +1,9 @@
+import java.lang.reflect.Array;
 import java.util.NoSuchElementException;
 
 class SimpleLinkedList<T> {
     private int size;
     private Node head;
-    private Node tail;
 
     class Node{
         private T data;
@@ -94,7 +94,16 @@ class SimpleLinkedList<T> {
     }
 
     T[] asArray(Class<T> clazz) {
-        T[] res = new T[]
+
+        T[] res = (T[])Array.newInstance(clazz,this.size);
+        this.reverse();
+        Node tempHead = this.head;
+        for(int i=0;i<this.size;++i)
+        {
+            res[i] = tempHead.data;
+            tempHead = tempHead.next;
+        }
+        return res;
     }
 
     int size() {

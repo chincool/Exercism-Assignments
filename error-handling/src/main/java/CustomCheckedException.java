@@ -1,11 +1,11 @@
 class CustomCheckedException extends Exception {
 
     CustomCheckedException() {
-        throw new IllegalArgumentException();
+        super();
     }
 
     CustomCheckedException(String message) {
-        throw new IllegalArgumentException(message);
+        super(message);
     }
 
 }

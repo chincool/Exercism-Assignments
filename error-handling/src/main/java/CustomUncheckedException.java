@@ -1,11 +1,11 @@
 class CustomUncheckedException extends RuntimeException {
 
     CustomUncheckedException() {
-        throw new ArithmeticException();
+        super();
     }
 
     CustomUncheckedException(String message) {
-        throw new ArithmeticException(message);
+        super(message);
     }
 
 }
